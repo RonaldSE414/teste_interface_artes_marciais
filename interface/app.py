@@ -28,7 +28,7 @@ def metricas(items):
     for col,(label,value) in zip(st.columns(len(items)),items): col.metric(label,value)
 def barras(s, titulo, horizontal=False):
     df=s.rename('Quantidade').rename_axis('Categoria').reset_index()
-    fig=px.bar(df,x='Quantidade' if horizontal else 'Categoria',y='Categoria' if horizontal else 'Quantidade',orientation='h' if horizontal else 'v',text_auto=True,title=titulo,color_discrete_sequence=['#087F8C'])
+    fig=px.bar(df,x='Quantidade' if horizontal else 'Categoria',y='Categoria' if horizontal else 'Quantidade',orientation='h' if horizontal else 'v',text_auto=True,title=titulo,color_discrete_sequence=['#DC2626'])
     fig.update_layout(showlegend=False,margin=dict(l=10,r=15,t=55,b=10),height=360)
     if horizontal: fig.update_yaxes(autorange='reversed')
     st.plotly_chart(fig,use_container_width=True)
